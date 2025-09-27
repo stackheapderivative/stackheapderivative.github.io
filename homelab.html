@@ -10,5 +10,19 @@
 
     <h2> What do I hope to achieve with this project? </h2>
     <p> I hope to have my own cloud storage with a NAS, a media server so I can watch my movies or listen to music without ads and I hope to be able to remote into the network via my raspberry pi that has been collecting dust. I also have other goals that tie into my passion for cybersecurity, I hope to make an environment to mess with Windows AD, set up Splunk to watch my endpoints and mess with custom Snort rules. I'll set up a small Kali VM to mess with exploiting the Windows VM for fun. </p>
+  	
+	<h1> Setting up the nodes </h1>
+	<hr>
+	<h2> Equipment </h2>
+	<p> My equipment is as follows: Beelink Mini PC S12 Pro, Inspirion 14-2-n-1 Dell Laptop, Mikrotik RB260GS Managed Switch, Raspberry Pi Zero W, External Harddrive(1TB). [AS OF 9/27] </p>
+	<h2> Setting up the devices </h2>
+	<hr>
+	<p> I decided to use proxmox as the OS for the two nodes, as it is simple and quite versatile, making it easy for me to create a cluster, thus allowing me to manage it and watch the statistics of the machines working together. Proxmox is a type-1 hypervisor, meaning that it runs the virtual machines as a bare-metal system. A type-2 hypervisor usually runs the virtual machines on a more dedicated OS, such as if you used VirtualBox before. Sidenote: I love kvm-qemu, so much faster!! <br> For installing proxmox onto the machines, it's extremely simple. I kept the default gateway and dns addresses the same, while making the actual static addresses closer to something I'd prefer, right next to each other. <br> Installing proxmox on the mini-pc was a breeze, however, setting it up on the laptop is a huge pain. Because I have to use a WII ETHERNET ADAPTER on the laptop, I have to use my docking station to install the .iso onto the laptop. If I don't, then it will not use the ethernet adapter I have connected without modifying it, which because I am too lazy to want to spend time on, I took the better route of simply using a usb-c docking station to use my usb drive. </p>
+	<p> IF YOU ARE USING A LAPTOP AS APART OF YOUR HOMELAB, MAKE SURE TO EITHER DISCONNECT THE BATTERY(Better) OR SET A MAXIMUM CHARGE LIMIT TO KEEP THE BATTERY FROM BECOMING A SPICY PILLOW. I ALSO ADVISE IF YOUR LAPTOP SUSPENDS WHEN CLOSING THE LID, THAT YOU DO THE FOLLOWING: <br> vi /etc/systemd/logind.conf THEN #HandeLidSwitch=ignore <br> Make sure to uncomment it. Then restart the service: systemctl restart systemd-logind. <br> This ensures that you can keep using the laptop without harming it or putting yourself into a bad situation if the battery gets spicy, which is more important if the laptop is old!. </p>
+	<p> Thus far, I have reinstalled proxmox onto both systems, so welcome netrunner and frieren! <br> [image here at a later date] </p>
+
+
+
+
   </body>
 </html>
